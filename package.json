@@ -1,0 +1,54 @@
+{
+  "name": "@aid-on/auth-providers",
+  "version": "0.1.0",
+  "description": "Core authentication providers library by Aid-On (framework agnostic)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./line": {
+      "import": "./dist/line/index.js",
+      "require": "./dist/line/index.js",
+      "types": "./dist/line/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "node -r esbuild-register test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aid-On/auth-providers-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aid-On/auth-providers-ts/issues"
+  },
+  "homepage": "https://github.com/Aid-On/auth-providers-ts#readme",
+  "keywords": [
+    "oauth",
+    "line",
+    "authentication",
+    "aid-on",
+    "cloud-functions",
+    "serverless"
+  ],
+  "author": "Aid-On",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild-register": "^3.5.0",
+    "typescript": "^5.0.0"
+  }
+}
